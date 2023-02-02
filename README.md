@@ -1,6 +1,6 @@
 Diving Deep
 This is the TL3's platformer project
-Our Live demo is scheduled for <t:1675962000:F>.
+Our Live demo is scheduled for Thursday, Feb 9, at 9:00 AM.
 
 Our game is a cave themed platformer which consists of reaching the bottom of a level to progress.
 
