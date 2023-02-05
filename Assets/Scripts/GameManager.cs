@@ -4,6 +4,11 @@ using UnityEngine;
 using TMPro;
 
 public class GameManager : MonoBehaviour{
+   public GameObject player;
+
+
+   private int player_health;
+   private int player_score;
 
    void Start(){
 
@@ -13,9 +18,6 @@ public class GameManager : MonoBehaviour{
          Application.Quit();
       }
       if(Input.GetKeyDown(KeyCode.Space)){
-         TogglePause();
       }
    }
-
-
 }
