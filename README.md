@@ -8,4 +8,4 @@ As of Feb 2, I'm not sure that there has been any progress on the development fo
 
 Frankly, I've never used .md (markdown) files before, so I'm not sure how this stuff formats. I think it's like a richer .txt file
 
-This project was created with Unity Editor Version [Version]. 
+This project was created with Unity Editor Version [2021.3.1.16f1]. 
