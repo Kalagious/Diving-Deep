@@ -5,14 +5,26 @@ using TMPro;
 
 public class GameManager : MonoBehaviour{
    public GameObject player;
+   public TextMeshProUGUI score_text;
 
 
    private int player_health;
    private int player_score;
 
    void Start(){
-
+      player_score = 0;
+      //Start score at zero
+      score_text.text = "Score: " + player_score;
    }
+
+   public void AddScore(int gotpoints)
+   {
+      //Add points
+      player_score += gotpoints;
+      //Add points to score text
+      score_text.text = "Score: " + player_score;
+   }
+
    void Update(){
       
       if(Input.GetKey(KeyCode.Escape)){
