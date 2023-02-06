@@ -5,7 +5,7 @@ using UnityEngine;
 public class PlayerController : MonoBehaviour
 {
    private Rigidbody2D rb;
-   //private Animator anim;
+   private Animator anim;
 
    public Transform groundCheckPoint;
 
@@ -26,7 +26,7 @@ public class PlayerController : MonoBehaviour
    void Start()
    {
       rb = GetComponent<Rigidbody2D>();
-      //anim = GetComponent<Animator>();
+      anim = GetComponent<Animator>();
    }
 
 
@@ -48,7 +48,8 @@ public class PlayerController : MonoBehaviour
          transform.localScale = new Vector3(1,1,1);
       }
 
-      //anim.SetFloat("Speed", Mathf.Abs(rb.velocity.x));
-      //anim.SetBool("Grounded", isGrounded);
+      anim.SetFloat("HorizonatalSpeed", Mathf.Abs(rb.velocity.x));
+      anim.SetFloat("VertialSpeed",Mathf.Abs(rb.velocity.y));
+      anim.SetBool("Grounded", isGrounded);
    }
 }
