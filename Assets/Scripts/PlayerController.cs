@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
+   public Health_control hp;
+
    private Rigidbody2D rb;
    //private Animator anim;
 
@@ -50,5 +52,13 @@ public class PlayerController : MonoBehaviour
 
       //anim.SetFloat("Speed", Mathf.Abs(rb.velocity.x));
       //anim.SetBool("Grounded", isGrounded);
+   }
+
+   private void OnTriggerEnter2D(Collider2D other)
+   {
+      if(other.gameObject.tag == "Spike")
+      {
+         hp.TakeDamage(20);
+      }
    }
 }

@@ -14,9 +14,10 @@ public class Health_control : MonoBehaviour
         slide=GetComponent<Slider>();
     }
 
-    // Update is called once per frame
-    void Update()
+    //Take damage
+    public void TakeDamage(float dmg)
     {
-        slide.value=health;
+        health -= dmg;
+        slide.value = health;
     }
 }
