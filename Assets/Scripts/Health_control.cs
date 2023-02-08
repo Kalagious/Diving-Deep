@@ -2,22 +2,29 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class Health_control : MonoBehaviour
 {
     Slider slide;
 
     float health=100;
+
     // Start is called before the first frame update
     void Start()
     {
         slide=GetComponent<Slider>();
     }
 
-    //Take damage
+    // Take damage
     public void TakeDamage(float dmg)
     {
         health -= dmg;
-        slide.value = health;
+
+        if (health <= 0) { // Once damage dealing mechanism exists, need to test
+            SceneManager.LoadScene("EndScreen");
+        } else {
+            slide.value = health;
+        }   
     }
 }
