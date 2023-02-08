@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour{
    public GameObject player;
@@ -22,8 +23,13 @@ public class GameManager : MonoBehaviour{
       //Add points
       player_score += gotpoints;
       //Add points to score text
-      score_text.text = "Score: " + player_score;
-   }
+      score_text.text = "Score: " + player_score + "/7";
+        if (player_score == 7)
+        {
+            SceneManager.LoadScene("VictoryScreen");
+        }
+
+    }
 
    void Update(){
       
