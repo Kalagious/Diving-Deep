@@ -4,7 +4,11 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
+   //Health Bar variable
    public Health_control hp;
+   //Player Steps
+   public AudioSource step1;
+   public AudioSource step2;
 
    private Rigidbody2D rb;
    //private Animator anim;
