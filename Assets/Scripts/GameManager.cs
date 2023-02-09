@@ -15,7 +15,7 @@ public class GameManager : MonoBehaviour{
    void Start(){
       player_score = 0;
       //Start score at zero
-      score_text.text = "Score: " + player_score;
+      score_text.text = "Chests: " + player_score;
    }
 
    public void AddScore(int gotpoints)
@@ -23,7 +23,7 @@ public class GameManager : MonoBehaviour{
       //Add points
       player_score += gotpoints;
       //Add points to score text
-      score_text.text = "Score: " + player_score + "/7";
+      score_text.text = "Chests: " + player_score + "/7";
         if (player_score == 7)
         {
             SceneManager.LoadScene("VictoryScreen");
