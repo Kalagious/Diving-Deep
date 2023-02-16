@@ -11,7 +11,8 @@ public class PlayerController : MonoBehaviour
    public AudioSource step2;
 
    private Rigidbody2D rb;
-   //private Animator anim;
+   private Animator anim;
+   private SpriteRenderer sprite;
 
    public Transform groundCheckPoint;
 
@@ -32,7 +33,8 @@ public class PlayerController : MonoBehaviour
    void Start()
    {
       rb = GetComponent<Rigidbody2D>();
-      //anim = GetComponent<Animator>();
+      anim = GetComponent<Animator>();
+      sprite =GetComponent<SpriteRenderer>();
    }
 
 
@@ -47,15 +49,17 @@ public class PlayerController : MonoBehaviour
          rb.velocity = new Vector2(rb.velocity.x, jumpForce);
       }
 
-/*      if (rb.velocity.x < 0){
-         transform.localScale = new Vector3(-1,1,1);
+      if (rb.velocity.x < 0){
+         sprite.flipX=true;
       }
       else if(rb.velocity.x > 0){
-         transform.localScale = new Vector3(1,1,1);
-      }*/
+         sprite.flipX=false;
+      }
 
-      //anim.SetFloat("Speed", Mathf.Abs(rb.velocity.x));
-      //anim.SetBool("Grounded", isGrounded);
+      anim.SetFloat("Speed", Mathf.Abs(rb.velocity.x));
+      anim.SetFloat("V_Speed", rb.velocity.y);
+      anim.SetBool("Grounded", isGrounded);
+
    }
 
    private void OnTriggerEnter2D(Collider2D other)
