@@ -56,6 +56,13 @@ public class PlayerController : MonoBehaviour
          sprite.flipX=false;
       }
 
+      //Steps Audio
+      /*if(Mathf.Abs(rb.velocity.x) > 0 && !step2.Play() && !step1.Play())
+      {
+         step1.Play();
+      }
+      else if()*/
+
       anim.SetFloat("Speed", Mathf.Abs(rb.velocity.x));
       anim.SetFloat("V_Speed", rb.velocity.y);
       anim.SetBool("Grounded", isGrounded);
