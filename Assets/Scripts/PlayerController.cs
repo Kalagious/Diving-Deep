@@ -9,6 +9,7 @@ public class PlayerController : MonoBehaviour
    //Player Steps
    public AudioSource step1;
    public AudioSource step2;
+   private int currstep;
 
    private Rigidbody2D rb;
    private Animator anim;
@@ -35,6 +36,7 @@ public class PlayerController : MonoBehaviour
       rb = GetComponent<Rigidbody2D>();
       anim = GetComponent<Animator>();
       sprite =GetComponent<SpriteRenderer>();
+      currstep = 1;
    }
 
 
@@ -57,11 +59,21 @@ public class PlayerController : MonoBehaviour
       }
 
       //Steps Audio
-      /*if(Mathf.Abs(rb.velocity.x) > 0 && !step2.Play() && !step1.Play())
+      if(Mathf.Abs(rb.velocity.x) > 0 && isGrounded)
       {
-         step1.Play();
+
+         if(!step1.isPlaying && !step2.isPlaying && currstep == 1)
+         {
+            step1.Play();
+            currstep = 2;
+         }
+
+                 if(!step1.isPlaying && !step2.isPlaying && currstep == 2)
+         {
+            step2.Play();
+            currstep = 2;
+         }
       }
-      else if()*/
 
       anim.SetFloat("Speed", Mathf.Abs(rb.velocity.x));
       anim.SetFloat("V_Speed", rb.velocity.y);
